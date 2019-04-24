@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+             http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+
+	<persistence-unit name="persistence">
+	
+		<class>ja.javilearn.jpa_hibernate.model.Employee</class>
+		
+		<properties>
+		<!--  Database connection Settings -->
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/simple_enterprise" />
+			<property name="javax.persistence.jdbc.user" value="javier" />
+			<property name="javax.persistence.jdbc.password"
+				value="javier" />
+		<!--   What database dialect for Hibernate to use: https://docs.jboss.org/hibernate/orm/3.5/javadocs/org/hibernate/dialect/package-summary.html -->
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+		<!--   Another options -->
+			<property name="hibernate.show_sql" value="true" />
+		<!--   Hibernate will create the database from Java if needed -->
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+		</properties>
+	</persistence-unit>
+
+</persistence>

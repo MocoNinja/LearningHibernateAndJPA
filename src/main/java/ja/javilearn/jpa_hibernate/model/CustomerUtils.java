@@ -6,21 +6,21 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-public class EmployeeUtils {
+public class CustomerUtils {
 	private static final String[] names = { "Pepe", "Juan", "Gonzalo", "David", "Jorge", "Víctor", "Antonio", "Carlos",
 			"Alejandro", "Alex", "Daniel", "Javier", "Mario", "Paula", "Sara", "Verónica", "Victoria", "Beatriz" };
 	private static final String[] surnames = { "González", "Tello", "Gómez", "Fernández", "Pérez", "Sánchez", "García",
 			"Moreno", "Jiménez", "Fustero", "Sanz", "Rodríguez", "De la fuente", "Fuertes", "Forcano" };
 
-	public static List<Employee> generateList(int amount) {
-		List<Employee> employees = new ArrayList<Employee>();
+	public static List<Customer> generateList(int amount) {
+		List<Customer> customers = new ArrayList<Customer>();
 
 		for (long i = 1; i <= amount; i++) {
-			Employee creating = new Employee(i, getRandomName(), getRandomSurname(2), getRandomDate(18, 50));
-			employees.add(creating);
+			Customer creating = new Customer(i, getRandomName(), getRandomSurname(2), getRandomDate(18, 50));
+			customers.add(creating);
 		}
 
-		return employees;
+		return customers;
 	}
 
 	private static Date getRandomDate(int minAge, int maxAge) {

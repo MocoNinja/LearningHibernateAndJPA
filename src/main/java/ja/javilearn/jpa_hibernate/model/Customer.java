@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "employees")
-public class Employee implements Serializable {
+@Table(name = "customers")
+public class Customer implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -19,16 +19,16 @@ public class Employee implements Serializable {
 	private Long id;
 	@Column(name = "name", length = 100)
 	private String name;
-	@Column(name = "surname", length = 100)
+	@Column(name = "surname", length = 150)
 	private String surname;
 	@Column(name = "birth_date")
 	private Date birthDate;
 
-	public Employee() {
+	public Customer() {
 
 	}
 
-	public Employee(Long id, String name, String surname, Date birthDate) {
+	public Customer(Long id, String name, String surname, Date birthDate) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -70,7 +70,7 @@ public class Employee implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", surname=" + surname + ", birthDate=" + birthDate + "]";
+		return String.format("Customer [id=%s, name=%s, surname=%s, birthDate=%s]", id, name, surname, birthDate);
 	}
 
 }

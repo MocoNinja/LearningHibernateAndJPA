@@ -7,14 +7,14 @@
 
 	<persistence-unit name="persistence">
 	
-		<class>ja.javilearn.jpa_hibernate.model.Employee</class>
+		<class>ja.javilearn.jpa_hibernate.model.Customer</class>
 		
 		<properties>
 		<!--  Database connection Settings -->
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/simple_enterprise" />
+				value="jdbc:mysql://localhost:3306/jpa_simple_store" />
 			<property name="javax.persistence.jdbc.user" value="javier" />
 			<property name="javax.persistence.jdbc.password"
 				value="javier" />

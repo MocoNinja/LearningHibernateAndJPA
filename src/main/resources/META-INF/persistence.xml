@@ -6,11 +6,11 @@
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
 	<persistence-unit name="persistence">
-	
+
 		<class>ja.javilearn.jpa_hibernate.model.Customer</class>
-		
+
 		<properties>
-		<!--  Database connection Settings -->
+			<!-- Database connection Settings -->
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"
@@ -18,12 +18,12 @@
 			<property name="javax.persistence.jdbc.user" value="javier" />
 			<property name="javax.persistence.jdbc.password"
 				value="javier" />
-		<!--   What database dialect for Hibernate to use: https://docs.jboss.org/hibernate/orm/3.5/javadocs/org/hibernate/dialect/package-summary.html -->
+			<!-- What database dialect for Hibernate to use: https://docs.jboss.org/hibernate/orm/3.5/javadocs/org/hibernate/dialect/package-summary.html -->
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.MySQL5InnoDBDialect" />
-		<!--   Another options -->
+			<!-- Another options -->
 			<property name="hibernate.show_sql" value="true" />
-		<!--   Hibernate will create the database from Java if needed -->
+			<!-- Hibernate will create the database from Java if needed -->
 			<property name="hibernate.hbm2ddl.auto" value="create" />
 		</properties>
 	</persistence-unit>

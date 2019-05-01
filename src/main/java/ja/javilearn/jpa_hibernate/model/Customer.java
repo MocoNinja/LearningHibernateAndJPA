@@ -5,23 +5,37 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+import com.sun.istack.NotNull;
 
 @Entity
-@Table(name = "customers")
+@Table(name = "customers", uniqueConstraints = { @UniqueConstraint(columnNames = { "name", "surname" }) })
+
 public class Customer implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id_customer")
+	@NotNull
 	private Long id;
+
 	@Column(name = "name", length = 100)
+	@NotNull
 	private String name;
+
 	@Column(name = "surname", length = 150)
+	@NotNull
 	private String surname;
+
 	@Column(name = "birth_date")
+	@NotNull
 	private Date birthDate;
 
 	public Customer() {
@@ -29,7 +43,6 @@ public class Customer implements Serializable {
 	}
 
 	public Customer(Long id, String name, String surname, Date birthDate) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.surname = surname;

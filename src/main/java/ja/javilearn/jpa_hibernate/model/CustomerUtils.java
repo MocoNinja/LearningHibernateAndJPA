@@ -6,11 +6,18 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import ja.javilearn.jpa_hibernate.database.CustomerDAO;
+
 public class CustomerUtils {
 	private static final String[] names = { "Pepe", "Juan", "Gonzalo", "David", "Jorge", "Víctor", "Antonio", "Carlos",
 			"Alejandro", "Alex", "Daniel", "Javier", "Mario", "Paula", "Sara", "Verónica", "Victoria", "Beatriz" };
 	private static final String[] surnames = { "González", "Tello", "Gómez", "Fernández", "Pérez", "Sánchez", "García",
 			"Moreno", "Jiménez", "Fustero", "Sanz", "Rodríguez", "De la fuente", "Fuertes", "Forcano" };
+
+	public static void populateDatabase(int amount) {
+		List<Customer> employees = CustomerUtils.generateList(20);
+		employees.forEach(c -> CustomerDAO.insert(c));
+	}
 
 	public static List<Customer> generateList(int amount) {
 		List<Customer> customers = new ArrayList<Customer>();
